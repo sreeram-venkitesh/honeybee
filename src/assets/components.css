@@ -1,0 +1,19 @@
+.text-area{
+
+    resize:None;
+    width:400px;
+    height:40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+.button-css {
+    width: 50px;
+    height: 45px;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
