@@ -3,54 +3,13 @@ from dash.dependencies import Input,Output,State
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
+import dash_dangerously_set_inner_html as dds
 
 import os
 from steem import Steem
 from pick import pick
 import pprint
 import json
-
-
-
-# def steemfunc(post,tag):
-#     s = Steem()
-#     query = {
-#         "limit":post, #number of posts
-#         "tag":str(tag) #tag of posts
-#         }
-#     print("collecting posts...")
-#     posts = s.get_discussions_by_created(query)
-#     print('posts collected!')
-#     options = []
-#     #posts list options
-#     details = ''
-#     dicts = []
-#     print("working")
-#     for post in posts:
-#         options.append(post["author"]+'/'+post["permlink"])
-#         details = s.get_content(post["author"],post["permlink"])
-
-#         # string += json.dumps(details,indent=4)
-#         # string += '\n\n'
-#         dicts.append(details)
-#         # text_file = open('steem_posts.txt','wt')
-#         # n = text_file.write(str(string))
-#         # text_file.close()
-
-#         # data = json.load(open('steem_posts.txt'))
-#         # pending_payouts.append(data['pending_payout_value'])
-#         # os.remove('steem_posts.txt')
-    
-        
-
-#     # print(pending_payouts)
-#     print(type(details))
-#     # print(dicts[2]['pending_payout_value'])
-#     # print('pending payout :')
-#     # print(data[0]['pending_payout_value'])
-#     # return 'You have clicked {} times. Input tags are {}, number of posts are {}'.format(clicks,tag,post)
-#     return dicts
-
 
 app = dash.Dash()
 
@@ -81,8 +40,10 @@ app.layout = html.Div(
         ]
     ),
     html.Div(
-        children=[
-            html.P(id='output',className='output-class'),
+        style={'text-align':'center'},
+        children=[  
+            html.Iframe(id='output',className='output-class'),
+            #dds.DangerouslySetInnerHTML(component_id='output')
         ]
     ),    
     ],)
@@ -103,49 +64,41 @@ def option_select(val):
         return True,True
 
 @app.callback(
-    Output(component_id='output',component_property='children'),
+    Output(component_id='output',component_property='srcDoc'),
     [Input(component_id='button',component_property='n_clicks')],
     state=[State(component_id='option-select',component_property='value'),State(component_id='tag',component_property='value'),State(component_id='posts',component_property='value')]
     )
 def update(clicks,option,tag,post):
 
-
     if(option=='latest'):
         post=1
-    
-    s = Steem()
-    query = {
-        "limit":post, #number of posts
-        "tag":str(tag) #tag of posts
-        }
-    print("collecting posts...")
-    posts = s.get_discussions_by_created(query)
-    print('posts collected!')
-    options = []
-    #posts list options
-    details = ''
-    dicts = []
-    print("working")
-    for post in posts:
-        options.append(post["author"]+'/'+post["permlink"])
-        details = s.get_content(post["author"],post["permlink"])
 
-        # string += json.dumps(details,indent=4)
-        # string += '\n\n'
-        dicts.append(details)
-        # text_file = open('steem_posts.txt','wt')
-        # n = text_file.write(str(string))
-        # text_file.close()
+        s = Steem()
+        query = {
+            "limit":post, #number of posts
+            "tag":str(tag) #tag of posts
+            }
+        print("collecting posts...")
+        posts = s.get_discussions_by_created(query)
+        print('posts collected!')
 
-        # data = json.load(open('steem_posts.txt'))
-        # pending_payouts.append(data['pending_payout_value'])
-        # os.remove('steem_posts.txt')
+        details = ''
+        dicts = []
+        print("working")
+        for post in posts:
+            details = s.get_content(post["author"],post["permlink"])
+            dicts.append(details)
+            
+        print(type(details))
+        # # return 'You have clicked {} times. Input tags are {}, number of posts are {}'.format(clicks,tag,post)
+        post_info = "Post Info <br><br>Author : {} <br><br>Category : {} <br><br>Created : {} <br><br>Title : {} <br><br>Body : {}".format(dicts[0]['author'],
+         dicts[0]['category'],dicts[0]['created'],dicts[0]['title'],dicts[0]['body'])
+        #print(post_info)
+        # return str(dicts[0].keys())
+        return post_info  
     
-    # print(pending_payouts)
-    print(type(details))
-    # # return 'You have clicked {} times. Input tags are {}, number of posts are {}'.format(clicks,tag,post)
-    return str(dicts[0].keys())
     
+
 
 if __name__ == "__main__":
     app.run_server(debug=True,port='8040')
