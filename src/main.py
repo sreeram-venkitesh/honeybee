@@ -15,20 +15,23 @@ def steemfunc(post,tag):
         "limit":post, #number of posts
         "tag":str(tag) #tag of posts
         }
-    print("working on it ")
+    print("collecting posts...")
     posts = s.get_discussions_by_created(query)
+    print('posts collected!')
     options = []
     #posts list options
-    # string = ""
-    details=""
+    string = ""
     print("working")
     for post in posts:
         options.append(post["author"]+'/'+post["permlink"])
-        details += str(s.get_content(post["author"],post["permlink"]))
-        details += '\n\n\n'
+        details = s.get_content(post["author"],post["permlink"])
+
+        string += json.dumps(details,indent=4)
+        string += '\n\n'
+        
 
     # return 'You have clicked {} times. Input tags are {}, number of posts are {}'.format(clicks,tag,post)
-    return details
+    return string
 
 
 app = dash.Dash()
@@ -93,6 +96,7 @@ def update(clicks,option,tag,post):
         post=1
     
     details = steemfunc(post,tag)
+   
     # s = Steem()
     # query = {
     #     "limit":post, #number of posts
@@ -109,12 +113,12 @@ def update(clicks,option,tag,post):
     #     options.append(post["author"]+'/'+post["permlink"])
     #     details += str(s.get_content(post["author"],post["permlink"]))
     #     details += '\n\n\n'
-
+    
     # # return 'You have clicked {} times. Input tags are {}, number of posts are {}'.format(clicks,tag,post)
     return details
 
     
 
 if __name__ == "__main__":
-    app.run_server(debug=True,port='8030')
+    app.run_server(debug=True,port='8040')
 
