@@ -23,6 +23,7 @@ app.layout = html.Div(
             html.H1('honeybee'),
             html.Br(),
             html.H2('The Hive Data Collector'),
+            html.Br()
         ]
     ),
     html.Div(
