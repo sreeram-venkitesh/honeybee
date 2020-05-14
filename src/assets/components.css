@@ -7,8 +7,13 @@
     padding-right: 10px;
     margin-left: 5px;
     margin-right: 5px;
-    cursor: pointer;
+}
 
+.option-select{
+    width: 920px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .button-css {

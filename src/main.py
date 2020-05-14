@@ -23,11 +23,18 @@ app.layout = html.Div(
         ]
     ),
     html.Div(
-        style={'text-align':'center','align-items':'center'},
+        style={'text-align':'center'},
         children=[
-           dcc.Input(id='tag',value="",className='text-area',placeholder='Enter Tags'),
-            dcc.Input(id='posts',value="",className='text-area',placeholder='Enter Number of Posts'),
-            html.Button('Get Data!',id='button',className='button-css')
+        dcc.Dropdown(id='option-select',
+            className='option-select',
+            options=[
+                {'label':'one','value':'1'},
+                {'label':'two','value':'2'},
+                {'label':'three','value':'3'}]),
+                html.Br(),
+                dcc.Input(id='tag',value="",className='text-area',placeholder='Enter Tags'),
+                dcc.Input(id='posts',value="",className='text-area',placeholder='Enter Number of Posts'),
+                html.Button('Get Data!',id='button',className='button-css')
         ]
     ),
     html.Div(
@@ -44,29 +51,30 @@ app.layout = html.Div(
     state=[State(component_id='tag',component_property='value'),State(component_id='posts',component_property='value')]
     )
 def update(clicks,tag,post):
-    s = Steem()
-    query = {
-        "limit":post, #number of posts
-        "tag":str(tag) #tag of posts
-        }
-    print("working on it ")
-    posts = s.get_discussions_by_created(query)
-    options = []
-    #posts list options
-    # string = ""
-    details=""
-    print("working")
-    for post in posts:
-        options.append(post["author"]+'/'+post["permlink"])
-        details += str(s.get_content(post["author"],post["permlink"]))
-        details += '\n\n\n'
+    # s = Steem()
+    # query = {
+    #     "limit":post, #number of posts
+    #     "tag":str(tag) #tag of posts
+    #     }
+    # print("working on it ")
+    # posts = s.get_discussions_by_created(query)
+    # options = []
+    # #posts list options
+    # # string = ""
+    # details=""
+    # print("working")
+    # for post in posts:
+    #     options.append(post["author"]+'/'+post["permlink"])
+    #     details += str(s.get_content(post["author"],post["permlink"]))
+    #     details += '\n\n\n'
 
-    # return 'You have clicked {} times. Input tags are {}, number of posts are {}'.format(clicks,tag,post)
-    return details
+    # # return 'You have clicked {} times. Input tags are {}, number of posts are {}'.format(clicks,tag,post)
+    # return details
+    return "poda"
     
 
     
 
 if __name__ == "__main__":
-    app.run_server(debug=True,port='8020')
+    app.run_server(debug=True,port='8010')
 
