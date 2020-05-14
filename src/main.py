@@ -97,6 +97,40 @@ def update(clicks,option,tag,post):
         # return str(dicts[0].keys())
         return post_info  
     
+    elif(option=='analytics'):
+        s = Steem()
+        query = {
+            "limit":post, #number of posts
+            "tag":str(tag) #tag of posts
+            }
+        print("collecting posts...")
+        posts = s.get_discussions_by_created(query)
+        print('posts collected!')
+
+        details = ''
+        dicts = []
+        print("working")
+        for post in posts:
+            details = s.get_content(post["author"],post["permlink"])
+            dicts.append(details)
+
+        pending = []
+        for post in dicts:
+            pending.append(post['pending_payout_value'])
+        print(type(pending[0]))
+        numbers = []
+        for entry in pending:
+            for word in entry.split():
+                print(word)
+                try:
+                    numbers.append(float(word))
+                except:
+                    print()
+        
+        return str(numbers)
+        
+
+    
     
 
 
