@@ -9,6 +9,8 @@ from pick import pick
 import pprint
 import json
 
+
+
 def steemfunc(post,tag):
     s = Steem()
     query = {
@@ -20,7 +22,8 @@ def steemfunc(post,tag):
     print('posts collected!')
     options = []
     #posts list options
-    string = ""
+    details = ''
+    string = ''
     print("working")
     for post in posts:
         options.append(post["author"]+'/'+post["permlink"])
@@ -28,8 +31,13 @@ def steemfunc(post,tag):
 
         string += json.dumps(details,indent=4)
         string += '\n\n'
-        
 
+        text_file = open('steem_posts.txt','wt')
+        n = text_file.write(str(string))
+        text_file.close()
+
+    # data = json.load(open('steem_posts.txt'))
+    #print(data['id'])
     # return 'You have clicked {} times. Input tags are {}, number of posts are {}'.format(clicks,tag,post)
     return string
 
@@ -64,7 +72,7 @@ app.layout = html.Div(
     ),
     html.Div(
         children=[
-            html.H3(id='output',className='output-class'),
+            html.P(id='output',className='output-class'),
         ]
     ),    
     ],)
@@ -95,28 +103,9 @@ def update(clicks,option,tag,post):
     if(option=='latest'):
         post=1
     
-    details = steemfunc(post,tag)
-   
-    # s = Steem()
-    # query = {
-    #     "limit":post, #number of posts
-    #     "tag":str(tag) #tag of posts
-    #     }
-    # print("working on it ")
-    # posts = s.get_discussions_by_created(query)
-    # options = []
-    # #posts list options
-    # # string = ""
-    # details=""
-    # print("working")
-    # for post in posts:
-    #     options.append(post["author"]+'/'+post["permlink"])
-    #     details += str(s.get_content(post["author"],post["permlink"]))
-    #     details += '\n\n\n'
-    
+    details = str(steemfunc(post,tag))
     # # return 'You have clicked {} times. Input tags are {}, number of posts are {}'.format(clicks,tag,post)
     return details
-
     
 
 if __name__ == "__main__":

@@ -1,0 +1,2489 @@
+{}{
+    "id": 86049453,
+    "author": "oflyhigh",
+    "permlink": "python-and-r",
+    "category": "cn",
+    "parent_author": "",
+    "parent_permlink": "cn",
+    "title": "\u6bcf\u5929\u8fdb\u6b65\u4e00\u70b9\u70b9\uff1aPython\u8bfb\u5199\u6587\u4ef6\u7684\u6a21\u5f0f & r+",
+    "body": "\u5e2e\u670b\u53cb\u5199\u4e00\u6bb5\u77ed\u5c0f\u7684Python\u4ee3\u7801\uff0c\u5176\u6bcf\u6b21\u8fd0\u884c\u65f6\u4f1a\u4ea7\u751f\u4e00\u4e2a\u5b57\u7b26\u4e32\uff0c\u9700\u8981\u4e0e\u4e0a\u6b21\u8fd0\u884c\u65f6\u751f\u6210\u7684\u7ed3\u679c\u5b57\u7b26\u4e32\u5bf9\u6bd4\u4e00\u4e0b\uff0c\u6765\u5224\u65ad\u662f\u5426\u9700\u8981\u7ee7\u7eed\u3002\n\n![](https://cdn.pixabay.com/photo/2018/09/19/18/30/keyboard-3689225_960_720.jpg)\n(\u56fe\u6e90 \uff1a[pixabay](https://pixabay.com/))\n\n\u8981\u60f3\u505a\u5230\u8fd9\u70b9\u6709\u5f88\u591a\u529e\u6cd5\uff0c\u6bd4\u5982\u8bf4\u8bfb\u5199\u6570\u636e\u5e93\u554a\u3001\u8bfb\u5199\u914d\u7f6e\u6587\u4ef6\u554a\uff0c\u4f46\u662f\u65e0\u8bba\u90a3\u6837\u90fd\u89c9\u5f97\u592a\u9ebb\u70e6\u4e86\uff0c\u6bd5\u7adf\u6211\u4eec\u6ca1\u6709\u592a\u591a\u7684\u6570\u636e\u8981\u5b58\u50a8\uff0c\u4e0d\u8fc7\u662f\u4e00\u4e2a\u5b57\u7b26\u4e32\u3002\n\n\u60f3\u6765\u60f3\u53bb\uff0c\u6700\u7b80\u5355\u7684\u529e\u6cd5\u83ab\u8fc7\u4e8e\u76f4\u63a5\u5199\u4e2a\u6587\u672c\u6587\u4ef6\u4e86\uff0c\u56e0\u4e3a\u65e2\u8981\u8bfb\u53d6\u53c8\u8981\u5199\u5165\uff0c\u4e8e\u662f\u6211\u76f4\u63a5\u5199\u4e86\u5982\u4e0b\u6253\u5f00\u6587\u4ef6\u7684\u4ee3\u7801\uff1a\n>`f = open(fname, 'rw')`\n\n\u5176\u4e2d`fname`\u4fdd\u5b58\u7740\u8def\u5f84+\u6587\u4ef6\u540d\uff0c\u770b\u7740\u89c9\u5f97\u633a\u5b8c\u7f8e\u7684\uff0c\u7136\u800c\u6267\u884c\u65f6\u76f4\u63a5\u62a5\u9519\u4e86\uff1a\n>ValueError: must have exactly one of create/read/write/append mode\n\n\u64e6\uff0c\u5982\u679c\u53ea\u662f\u8fd9\u4e9b\u6a21\u5f0f\uff0c\u6211\u600e\u4e48\u4e00\u8fb9\u6109\u5feb\u5730\u8bfb\uff0c\u4e00\u8fb9\u6109\u5feb\u5730\u5199\u4e86\uff1f\u7f51\u4e0a\u627e\u4e86\u4e00\u4e9b\u5185\u5bb9\uff0c\u6709\u5efa\u8bae\u8bfb\u6a21\u5f0f\u6253\u5f00\u6587\u4ef6\u540c\u65f6\u5199\u6a21\u5f0f\u518d\u6253\u5f00\uff0c\u8fd8\u6709\u7684\u5efa\u8bae\u6253\u5f00A\u6587\u4ef6\u8bfb\uff0c\u518d\u6253\u5f00B\u6587\u4ef6\u5199\u3002\n\n\u5982\u679c\u6253\u5f00A\u8bfb\uff0c\u518d\u6253\u5f00B\u5199\uff0c\u90a3\u4e48\u6211\u9700\u8981\u5173\u95edA\u540e\uff0c\u5728\u7528B\u8986\u76d6A\uff0c\u90a3\u6837\u597d\u50cf\u8fd8\u4e0d\u5982\u6211\u6253\u5f00\u5e76\u8bfbA\uff0c\u5173\u95edA\uff0c\u518d\u6253\u5f00\u5199A\u3002\u5c3d\u7ba1\u8fd9\u4e2a\u601d\u8def\u5e94\u8be5\u5b8c\u5168\u53ef\u884c\uff0c\u4f46\u662fPython\u771f\u7684\u4e0d\u80fd\u7528\u8bfb\u5199\u65b9\u5f0f\u6253\u5f00\u5417\uff1f\n\n\u4e8e\u662f\u627e\u4e86\u4e00\u4e0bPython\u5b98\u7f51\u4e0a\u7684[\u5173\u4e8eopen\u7684\u5185\u5bb9](https://docs.python.org/3/library/functions.html#open)\uff0c\u5e76\u770b\u5230\u8fd9\u90e8\u5206\uff1a\n>![image.png](https://images.hive.blog/DQmYqSdcSwUUdLtGReZBpKnUhNsgeaiTY3anuMy3YFaNMVj/image.png)\n\n\u5c24\u5176\u662f\u5176\u4e2d`'+' | open for updating (reading and writing)`\u7b80\u76f4\u5c31\u662f\u6211\u60f3\u8981\u7684\u554a\uff0c\u867d\u7136\u6211\u6309\u6211\u7684\u7ecf\u9a8c`+`\u662f\u8981\u548c\u5176\u5b83\u6807\u8bb0\u4e00\u8d77\u7528\u7684\u3002\u4f46\u662f\u8fd8\u662f\u4e0d\u6b7b\u5fc3\u8bd5\u4e86\u4e00\u4e0b\uff1a\n>`f = open(fname, '+')`\n\n\u679c\u4e0d\u5176\u7136\u51fa\u9519\u4e86\uff1a\n>ValueError: Must have exactly one of create/read/write/append mode and at most one plus\n\n\u8fd8\u662f\u8001\u8001\u5b9e\u5b9e\u7528`r+`\u5427\uff0c\u4ea6\u5373`f = open(fname, 'r+')`\u679c\u7136\u6253\u5f00\u6ca1\u6709\u95ee\u9898\u3002\u4f46\u662f\u65b0\u95ee\u9898\u53c8\u6765\u4e86\uff0c\u6211\u8bfb\u5b8c\u5b57\u7b26\u4e32\u5e76\u5199\u5165\u540e\uff0c\u65b0\u65b0\u5199\u5165\u7684\u5185\u5bb9\u76f4\u63a5\u8ffd\u52a0\u5230\u539f\u6765\u7684\u5185\u5bb9\u540e\u8fb9\u4e86\u3002\n\n\u4e0d\u8fc7\u60f3\u60f3\u4e5f\u662f\uff0c\u56e0\u4e3a\u8bfb\u5b8c\u6587\u4ef6\u5185\u5bb9\u7684\u65f6\u5019\uff0c\u6587\u4ef6\u6307\u9488\u5df2\u7ecf\u6307\u5230\u6587\u4ef6\u672b\u5c3e\u4e86\uff0c\u5728\u8fd9\u4e2a\u4f4d\u7f6e\u5199\u5165\uff0c\u5f53\u7136\u5c31\u662f\u8ffd\u52a0\u55bd\u3002\n\n\u6216\u8bb8\u6211\u4eec\u53ef\u4ee5\u7528\u5982\u4e0b\u6307\u4ee4\u5c06\u6307\u9488\u79fb\u52a8\u5230\u6587\u4ef6\u6700\u524d\u7aef\uff1a\n>`f.seek(0)`\n\n\u4e0d\u8fc7\u60f3\u60f3\uff0c\u8fd9\u6837\u6216\u8bb8\u4e5f\u4e0d\u5b89\u5168\uff0c\u5047\u8bbe\u5f53\u524d\u6587\u4ef6\u5185\u7684\u5b57\u7b26\u4e32\u4e3a`1234567890`\uff0c\u6211\u8981\u65b0\u5199\u5165\u7684\u5b57\u7b26\u4e32\u4e3a`12345`\uff0c\u90a3\u4e48\u4f60\u5199\u5b8c\u4ee5\u540e\uff0c\u5b57\u7b26\u4e32\u7684\u5185\u5bb9\u53d8\u4e0d\u53d8\u5462\uff1f\n\n\u6211\u6ca1\u53bb\u6d4b\u8bd5\u5b57\u7b26\u4e32\u7684\u5185\u5bb9\u53d8\u4e0d\u53d8\uff0c\u4f46\u662f\u6211\u89c9\u5f97\u4ece\u903b\u8f91\u4e0a\u5c31\u4e0d\u4f18\u96c5\u3002\u4e3a\u4e86\u4f18\u96c5\u7684\u5904\u7406\uff0c\u6211\u8fd8\u662f\u7528\u5982\u4e0b\u4ee3\u7801\u5427\uff1a\n>`f.seek(0)`\n>`f.truncate()`\n>`f.write(str_a)`\n\n\u4e5f\u5c31\u662f\u8bf4\u5148\u5b9a\u4f4d\u5230\u6587\u4ef6\u5934\uff0c\u518d\u6e05\u7a7a\u5185\u5bb9\uff0c\u518d\u5199\u5165\uff0c\u8fd9\u6837\u770b\u8d77\u6765\u4f18\u96c5\u591a\u4e86\u3002\u628a\u7a0b\u5e8f\u8dd1\u8d77\u6765\uff0c\u679c\u7136\u597d\u7528\uff0c\u8fd9\u6837\u6211\u5c31\u653e\u5fc3\u5566\u3002\n\n\n# \u76f8\u5173\u94fe\u63a5\n\n* https://docs.python.org/3/library/functions.html#open\n* https://docs.python.org/3.7/tutorial/inputoutput.html#methods-of-file-objects",
+    "json_metadata": "{\"tags\":[\"cn\",\"cutehive\",\"cn-programming\",\"python\",\"study\"],\"image\":[\"https://cdn.pixabay.com/photo/2018/09/19/18/30/keyboard-3689225_960_720.jpg\",\"https://images.hive.blog/DQmYqSdcSwUUdLtGReZBpKnUhNsgeaiTY3anuMy3YFaNMVj/image.png\"],\"links\":[\"https://pixabay.com/\",\"https://docs.python.org/3/library/functions.html#open\",\"https://docs.python.org/3.7/tutorial/inputoutput.html#methods-of-file-objects\"],\"app\":\"steemit/0.2\",\"format\":\"markdown\"}",
+    "last_update": "2020-05-14T03:14:03",
+    "created": "2020-05-14T03:14:03",
+    "active": "2020-05-14T03:14:03",
+    "last_payout": "1970-01-01T00:00:00",
+    "depth": 0,
+    "children": 0,
+    "net_rshares": "33686127008492",
+    "abs_rshares": "33686127008492",
+    "vote_rshares": "33686127008492",
+    "children_abs_rshares": "33686127008492",
+    "cashout_time": "2020-05-21T03:14:03",
+    "max_cashout_time": "1969-12-31T23:59:59",
+    "total_vote_weight": 5230300,
+    "reward_weight": 10000,
+    "total_payout_value": "0.000 SBD",
+    "curator_payout_value": "0.000 SBD",
+    "author_rewards": 0,
+    "net_votes": 281,
+    "root_author": "oflyhigh",
+    "root_permlink": "python-and-r",
+    "max_accepted_payout": "1000000.000 SBD",
+    "percent_steem_dollars": 10000,
+    "allow_replies": true,
+    "allow_votes": true,
+    "allow_curation_rewards": true,
+    "beneficiaries": [],
+    "url": "/cn/@oflyhigh/python-and-r",
+    "root_title": "\u6bcf\u5929\u8fdb\u6b65\u4e00\u70b9\u70b9\uff1aPython\u8bfb\u5199\u6587\u4ef6\u7684\u6a21\u5f0f & r+",
+    "pending_payout_value": "13.108 SBD",
+    "total_pending_payout_value": "0.000 STEEM",
+    "active_votes": [
+        {
+            "voter": "thecryptodrive",
+            "weight": 49124,
+            "rshares": "600022613177",
+            "percent": 2500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:09"
+        },
+        {
+            "voter": "gerber",
+            "weight": 21962,
+            "rshares": "166542449810",
+            "percent": 1480,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:51"
+        },
+        {
+            "voter": "kosimoos",
+            "weight": 37,
+            "rshares": 564863881,
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:23:33"
+        },
+        {
+            "voter": "daan",
+            "weight": 10659,
+            "rshares": "68589005877",
+            "percent": 800,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "gidlark",
+            "weight": 869,
+            "rshares": "5535808204",
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:33"
+        },
+        {
+            "voter": "blockchainbilly",
+            "weight": 907,
+            "rshares": "8288072488",
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:40:12"
+        },
+        {
+            "voter": "fundurian",
+            "weight": 3856,
+            "rshares": "35919790243",
+            "percent": 9800,
+            "reputation": 0,
+            "time": "2020-05-14T06:53:24"
+        },
+        {
+            "voter": "exyle",
+            "weight": 59756,
+            "rshares": "469231120446",
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "sharker",
+            "weight": 401,
+            "rshares": 2459862029,
+            "percent": 1100,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:42"
+        },
+        {
+            "voter": "rea",
+            "weight": 106152,
+            "rshares": "1528360393384",
+            "percent": 4000,
+            "reputation": 0,
+            "time": "2020-05-14T03:20:09"
+        },
+        {
+            "voter": "yogi",
+            "weight": 842,
+            "rshares": "10880630858",
+            "percent": 2500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "joythewanderer",
+            "weight": 5289,
+            "rshares": "52200308145",
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:57"
+        },
+        {
+            "voter": "lemooljiang",
+            "weight": 50198,
+            "rshares": "637997199094",
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:15"
+        },
+        {
+            "voter": "kibela",
+            "weight": 478,
+            "rshares": 3044530544,
+            "percent": 1100,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:33"
+        },
+        {
+            "voter": "laoyao",
+            "weight": 4374,
+            "rshares": "42199924600",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:24"
+        },
+        {
+            "voter": "somebody",
+            "weight": 1019,
+            "rshares": "10286454063",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:30"
+        },
+        {
+            "voter": "skysunny",
+            "weight": 10,
+            "rshares": 135304154,
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:18"
+        },
+        {
+            "voter": "midnightoil",
+            "weight": 14436,
+            "rshares": "150878902774",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:33"
+        },
+        {
+            "voter": "xiaohui",
+            "weight": 81947,
+            "rshares": "835869015100",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:33"
+        },
+        {
+            "voter": "silentlucidity53",
+            "weight": 0,
+            "rshares": 0,
+            "percent": 7500,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:18"
+        },
+        {
+            "voter": "oflyhigh",
+            "weight": 135474,
+            "rshares": "1337780829368",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:27"
+        },
+        {
+            "voter": "yulan",
+            "weight": 1444,
+            "rshares": "15165071203",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:39"
+        },
+        {
+            "voter": "rivalhw",
+            "weight": 28110,
+            "rshares": "422650749237",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:32:21"
+        },
+        {
+            "voter": "nextgen622",
+            "weight": 50307,
+            "rshares": "686126220769",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "helene",
+            "weight": 44166,
+            "rshares": "463343710680",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:36"
+        },
+        {
+            "voter": "ffcrossculture",
+            "weight": 51836,
+            "rshares": "476734620030",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:49:00"
+        },
+        {
+            "voter": "ebargains",
+            "weight": 1761,
+            "rshares": "7857146402",
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "funnyman",
+            "weight": 32065,
+            "rshares": "231572550735",
+            "percent": 2500,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:09"
+        },
+        {
+            "voter": "lexikon082",
+            "weight": 279,
+            "rshares": 1257316811,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:21"
+        },
+        {
+            "voter": "dapeng",
+            "weight": 3940,
+            "rshares": "35986284513",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:39:21"
+        },
+        {
+            "voter": "timool",
+            "weight": 93,
+            "rshares": 1190720608,
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:15"
+        },
+        {
+            "voter": "lucknie",
+            "weight": 1443,
+            "rshares": "18612402837",
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:21"
+        },
+        {
+            "voter": "dumping",
+            "weight": 149,
+            "rshares": 1901708022,
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:21"
+        },
+        {
+            "voter": "justinashby",
+            "weight": 2421,
+            "rshares": "18569575101",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:12"
+        },
+        {
+            "voter": "lordneroo",
+            "weight": 742,
+            "rshares": "4672094230",
+            "percent": 1406,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:12"
+        },
+        {
+            "voter": "austinsandersco",
+            "weight": 76,
+            "rshares": 697923276,
+            "percent": 7000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:27"
+        },
+        {
+            "voter": "teachblogger",
+            "weight": 230,
+            "rshares": 2104076333,
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:21"
+        },
+        {
+            "voter": "kingofdew",
+            "weight": 5007,
+            "rshares": "45602843148",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:15"
+        },
+        {
+            "voter": "htliao",
+            "weight": 1759,
+            "rshares": "24366856324",
+            "percent": 2000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "curly-q",
+            "weight": 473,
+            "rshares": 2274788621,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:12"
+        },
+        {
+            "voter": "eliel",
+            "weight": 8212,
+            "rshares": "57570887317",
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "frankintaiwan",
+            "weight": 0,
+            "rshares": 0,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:15"
+        },
+        {
+            "voter": "wylo",
+            "weight": 41,
+            "rshares": 620254764,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:24:15"
+        },
+        {
+            "voter": "jkkim",
+            "weight": 4,
+            "rshares": 26748437,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:40:15"
+        },
+        {
+            "voter": "ebejammin",
+            "weight": 639,
+            "rshares": "5841285953",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:24"
+        },
+        {
+            "voter": "improv",
+            "weight": 3986,
+            "rshares": "19256942676",
+            "percent": 450,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "nuagnorab",
+            "weight": 10874,
+            "rshares": "79352507203",
+            "percent": 2000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:09"
+        },
+        {
+            "voter": "cryptohustler",
+            "weight": 2599,
+            "rshares": "38708929865",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:32:15"
+        },
+        {
+            "voter": "eval",
+            "weight": 11,
+            "rshares": 761591802,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:14:12"
+        },
+        {
+            "voter": "anacristinasilva",
+            "weight": 3999,
+            "rshares": "27794441214",
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:42"
+        },
+        {
+            "voter": "speeding",
+            "weight": 404,
+            "rshares": 3689072665,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:24"
+        },
+        {
+            "voter": "maxer27",
+            "weight": 4378,
+            "rshares": "26717147875",
+            "percent": 2000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:27"
+        },
+        {
+            "voter": "blacklux",
+            "weight": 1549,
+            "rshares": "14876694713",
+            "percent": 2500,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:21"
+        },
+        {
+            "voter": "walkinharmony",
+            "weight": 4266,
+            "rshares": "39003522252",
+            "percent": 4000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:15"
+        },
+        {
+            "voter": "techken",
+            "weight": 117,
+            "rshares": 795716669,
+            "percent": 300,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:39"
+        },
+        {
+            "voter": "asterix87",
+            "weight": 1541,
+            "rshares": "14081518495",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:12"
+        },
+        {
+            "voter": "gniksivart",
+            "weight": 8335,
+            "rshares": "36283765321",
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "abetterworld",
+            "weight": 323,
+            "rshares": 2931994796,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:15"
+        },
+        {
+            "voter": "runicar",
+            "weight": 8112,
+            "rshares": "51174562047",
+            "percent": 1406,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:12"
+        },
+        {
+            "voter": "that1consultant",
+            "weight": 28,
+            "rshares": 252556455,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:30"
+        },
+        {
+            "voter": "sanzo",
+            "weight": 52,
+            "rshares": 478176305,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:15"
+        },
+        {
+            "voter": "davaowhenyo",
+            "weight": 59,
+            "rshares": 546782998,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:15"
+        },
+        {
+            "voter": "allenshayzar",
+            "weight": 60,
+            "rshares": 547299912,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:18"
+        },
+        {
+            "voter": "dado13btc",
+            "weight": 278,
+            "rshares": 1704096340,
+            "percent": 1406,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:21"
+        },
+        {
+            "voter": "travelgirl",
+            "weight": 8502,
+            "rshares": "62382242362",
+            "percent": 4000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:03"
+        },
+        {
+            "voter": "raku",
+            "weight": 27,
+            "rshares": 244779148,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:21"
+        },
+        {
+            "voter": "resteeming",
+            "weight": 7,
+            "rshares": 67466666,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:15"
+        },
+        {
+            "voter": "ravenousappetite",
+            "weight": 66,
+            "rshares": 606895480,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:21"
+        },
+        {
+            "voter": "aabb",
+            "weight": 22,
+            "rshares": 326653208,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:32:15"
+        },
+        {
+            "voter": "catwomanteresa",
+            "weight": 9818,
+            "rshares": "60050775155",
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:21"
+        },
+        {
+            "voter": "auntigormint",
+            "weight": 14,
+            "rshares": 67526715,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:12"
+        },
+        {
+            "voter": "mrliga",
+            "weight": 1438,
+            "rshares": "21434587472",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:32:18"
+        },
+        {
+            "voter": "oldman28",
+            "weight": 2538,
+            "rshares": "22753911562",
+            "percent": 4800,
+            "reputation": 0,
+            "time": "2020-05-14T03:15:12"
+        },
+        {
+            "voter": "sweethoney",
+            "weight": 222,
+            "rshares": 2025775469,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:18"
+        },
+        {
+            "voter": "stinawog",
+            "weight": 1077,
+            "rshares": "5124523523",
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "liangfengyouren",
+            "weight": 168,
+            "rshares": 3390066333,
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:14:33"
+        },
+        {
+            "voter": "lancy",
+            "weight": 519,
+            "rshares": "4742716507",
+            "percent": 9200,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:18"
+        },
+        {
+            "voter": "aafeng",
+            "weight": 10051,
+            "rshares": "92848979630",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:15:09"
+        },
+        {
+            "voter": "cn-reader",
+            "weight": 363,
+            "rshares": "5514474869",
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:32:30"
+        },
+        {
+            "voter": "pardeepkumar",
+            "weight": 1473,
+            "rshares": "9034009901",
+            "percent": 1406,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:21"
+        },
+        {
+            "voter": "tvb",
+            "weight": 1359,
+            "rshares": "20211639400",
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:28:21"
+        },
+        {
+            "voter": "skenan",
+            "weight": 430,
+            "rshares": "6394370248",
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:29:21"
+        },
+        {
+            "voter": "bearpaw",
+            "weight": 47,
+            "rshares": 422872650,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:15"
+        },
+        {
+            "voter": "rocky1",
+            "weight": 575003,
+            "rshares": "4026555269925",
+            "percent": 400,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:42"
+        },
+        {
+            "voter": "kimzwarch",
+            "weight": 1275,
+            "rshares": "7570544216",
+            "percent": 400,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:33"
+        },
+        {
+            "voter": "bboyady",
+            "weight": 58,
+            "rshares": 878125750,
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:33:21"
+        },
+        {
+            "voter": "saltiberra",
+            "weight": 71,
+            "rshares": 1080618469,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:32:51"
+        },
+        {
+            "voter": "freedom-fighter",
+            "weight": 59,
+            "rshares": 546493330,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:18"
+        },
+        {
+            "voter": "accelerator",
+            "weight": 22184,
+            "rshares": "95086914812",
+            "percent": 1320,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "chinchilla",
+            "weight": 24092,
+            "rshares": "224984713452",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T07:18:48"
+        },
+        {
+            "voter": "estream.studios",
+            "weight": 295,
+            "rshares": 1316872483,
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "technologynepal",
+            "weight": 37,
+            "rshares": 546281942,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:20:15"
+        },
+        {
+            "voter": "davidke20",
+            "weight": 1634,
+            "rshares": "11891212750",
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:09"
+        },
+        {
+            "voter": "rosatravels",
+            "weight": 2194,
+            "rshares": "30477296722",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:33"
+        },
+        {
+            "voter": "osm0sis",
+            "weight": 1562,
+            "rshares": "9649624743",
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:24"
+        },
+        {
+            "voter": "robertoueti",
+            "weight": 260,
+            "rshares": 1969573743,
+            "percent": 300,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "roleerob",
+            "weight": 2084,
+            "rshares": "13620158032",
+            "percent": 444,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "khalilad",
+            "weight": 59,
+            "rshares": 540316042,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:21"
+        },
+        {
+            "voter": "ms8988",
+            "weight": 41,
+            "rshares": 194416357,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:15"
+        },
+        {
+            "voter": "espoem",
+            "weight": 806,
+            "rshares": "5681598047",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "xiaoshancun",
+            "weight": 2531,
+            "rshares": "23034250263",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:06"
+        },
+        {
+            "voter": "rakkasan84",
+            "weight": 61221,
+            "rshares": "282069199090",
+            "percent": 2400,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "rollsman",
+            "weight": 639,
+            "rshares": "5905332278",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T04:42:15"
+        },
+        {
+            "voter": "stakuza",
+            "weight": 7,
+            "rshares": 67198669,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:18"
+        },
+        {
+            "voter": "tatjanastan",
+            "weight": 46037,
+            "rshares": "427036710549",
+            "percent": 4200,
+            "reputation": 0,
+            "time": "2020-05-14T06:19:15"
+        },
+        {
+            "voter": "toocurious",
+            "weight": 2372,
+            "rshares": "14919579473",
+            "percent": 1465,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:12"
+        },
+        {
+            "voter": "metten",
+            "weight": 772,
+            "rshares": "9960541613",
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:21"
+        },
+        {
+            "voter": "ikonik",
+            "weight": 14,
+            "rshares": 69468220,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:15"
+        },
+        {
+            "voter": "vfxness",
+            "weight": 2,
+            "rshares": 17564599,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:27"
+        },
+        {
+            "voter": "lemminon",
+            "weight": 113,
+            "rshares": 547050194,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:12"
+        },
+        {
+            "voter": "heyeshuang",
+            "weight": 67,
+            "rshares": 607619547,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:21"
+        },
+        {
+            "voter": "pataty69",
+            "weight": 4058,
+            "rshares": "27131346483",
+            "percent": 2000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:42"
+        },
+        {
+            "voter": "razor80",
+            "weight": 60,
+            "rshares": 538240909,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:18"
+        },
+        {
+            "voter": "fastiduos",
+            "weight": 66,
+            "rshares": 606881285,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:12"
+        },
+        {
+            "voter": "winniex",
+            "weight": 587,
+            "rshares": "8713270067",
+            "percent": 2000,
+            "reputation": 0,
+            "time": "2020-05-14T03:20:15"
+        },
+        {
+            "voter": "rebecca80",
+            "weight": 16,
+            "rshares": 148716191,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:18"
+        },
+        {
+            "voter": "weavingwords",
+            "weight": 6608,
+            "rshares": "60252389236",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:18"
+        },
+        {
+            "voter": "nitro.live",
+            "weight": 28,
+            "rshares": 255262196,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:21"
+        },
+        {
+            "voter": "fknmayhem",
+            "weight": 200,
+            "rshares": 1630588228,
+            "percent": 740,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "blockbrothers",
+            "weight": 2091,
+            "rshares": "13300793236",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:12"
+        },
+        {
+            "voter": "cn-book",
+            "weight": 79,
+            "rshares": 1035274646,
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:15"
+        },
+        {
+            "voter": "huatanzhang",
+            "weight": 57,
+            "rshares": 852300703,
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:32:24"
+        },
+        {
+            "voter": "emrebeyler",
+            "weight": 8765,
+            "rshares": "68214628783",
+            "percent": 1480,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:57"
+        },
+        {
+            "voter": "chann",
+            "weight": 723,
+            "rshares": "6600481640",
+            "percent": 2000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:27"
+        },
+        {
+            "voter": "cn-movie",
+            "weight": 9,
+            "rshares": 117633543,
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:18"
+        },
+        {
+            "voter": "etherpunk",
+            "weight": 110,
+            "rshares": 1420112153,
+            "percent": 2500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "ocupation",
+            "weight": 2245,
+            "rshares": "13782139518",
+            "percent": 1406,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:21"
+        },
+        {
+            "voter": "itchyfeetdonica",
+            "weight": 12138,
+            "rshares": "116101660318",
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:21"
+        },
+        {
+            "voter": "vivia",
+            "weight": 248,
+            "rshares": 3196782636,
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "coindzs",
+            "weight": 188,
+            "rshares": 1716118621,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:12"
+        },
+        {
+            "voter": "enjoyinglife",
+            "weight": 867,
+            "rshares": "5328040607",
+            "percent": 1406,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:21"
+        },
+        {
+            "voter": "fourfourfun",
+            "weight": 130,
+            "rshares": 1623018083,
+            "percent": 625,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:12"
+        },
+        {
+            "voter": "mmmmkkkk311",
+            "weight": 73293,
+            "rshares": "369749332625",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "bengy",
+            "weight": 125,
+            "rshares": 890627943,
+            "percent": 66,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:42"
+        },
+        {
+            "voter": "yikloongye",
+            "weight": 0,
+            "rshares": 0,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:09"
+        },
+        {
+            "voter": "johnhooi",
+            "weight": 1,
+            "rshares": 9680434,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:36"
+        },
+        {
+            "voter": "nealmcspadden",
+            "weight": 24240,
+            "rshares": "189205384205",
+            "percent": 1480,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:51"
+        },
+        {
+            "voter": "maiyude",
+            "weight": 11532,
+            "rshares": "138663579543",
+            "percent": 5079,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:09"
+        },
+        {
+            "voter": "suhunter",
+            "weight": 104,
+            "rshares": 952991866,
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:41:18"
+        },
+        {
+            "voter": "curx",
+            "weight": 22929,
+            "rshares": "102169581853",
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:24"
+        },
+        {
+            "voter": "xiaoli",
+            "weight": 24,
+            "rshares": 302282260,
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:21"
+        },
+        {
+            "voter": "yumisee",
+            "weight": 6,
+            "rshares": 83781772,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:20:06"
+        },
+        {
+            "voter": "casberp",
+            "weight": 622,
+            "rshares": "4740709975",
+            "percent": 300,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:48"
+        },
+        {
+            "voter": "joeliew",
+            "weight": 24,
+            "rshares": 303538054,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "investprosper",
+            "weight": 683,
+            "rshares": "4367071191",
+            "percent": 740,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:12"
+        },
+        {
+            "voter": "hkit98",
+            "weight": 0,
+            "rshares": 0,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:42"
+        },
+        {
+            "voter": "elvinmas001",
+            "weight": 0,
+            "rshares": 0,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:20:00"
+        },
+        {
+            "voter": "watersoo",
+            "weight": 20,
+            "rshares": 282018618,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:48"
+        },
+        {
+            "voter": "vamos-amigo",
+            "weight": 18,
+            "rshares": 246834653,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:54"
+        },
+        {
+            "voter": "cadawg",
+            "weight": 2143,
+            "rshares": "14034311931",
+            "percent": 1036,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "sudefteri",
+            "weight": 2306,
+            "rshares": "14730287959",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:12"
+        },
+        {
+            "voter": "happy-soul",
+            "weight": 3413,
+            "rshares": "32600116199",
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:24"
+        },
+        {
+            "voter": "florenceboens",
+            "weight": 118,
+            "rshares": 794104418,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:42"
+        },
+        {
+            "voter": "iipoh06",
+            "weight": 0,
+            "rshares": 7667934,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:00"
+        },
+        {
+            "voter": "ofildutemps",
+            "weight": 307,
+            "rshares": 1368826245,
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "historylover",
+            "weight": 16,
+            "rshares": 150087261,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:21"
+        },
+        {
+            "voter": "annabellenoelle",
+            "weight": 0,
+            "rshares": 3431227,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:21"
+        },
+        {
+            "voter": "mindtrap",
+            "weight": 9205,
+            "rshares": "69595071454",
+            "percent": 1406,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "yethui",
+            "weight": 2,
+            "rshares": 24516900,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:15"
+        },
+        {
+            "voter": "btccurrency1",
+            "weight": 46,
+            "rshares": 419120307,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:33"
+        },
+        {
+            "voter": "riczlook",
+            "weight": 0,
+            "rshares": 11583742,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:30"
+        },
+        {
+            "voter": "ethanlee",
+            "weight": 123,
+            "rshares": 4118633056,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:14:21"
+        },
+        {
+            "voter": "andrewnoel",
+            "weight": 0,
+            "rshares": 0,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:27"
+        },
+        {
+            "voter": "retinox",
+            "weight": 286,
+            "rshares": 2902177650,
+            "percent": 249,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:30"
+        },
+        {
+            "voter": "fishbb",
+            "weight": 105,
+            "rshares": 1449310789,
+            "percent": 2539,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "outlinez",
+            "weight": 95,
+            "rshares": 737879640,
+            "percent": 400,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:48"
+        },
+        {
+            "voter": "fredo77200",
+            "weight": 401,
+            "rshares": 3665154696,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:21"
+        },
+        {
+            "voter": "bestboom",
+            "weight": 772,
+            "rshares": "6311001696",
+            "percent": 1480,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "onepercentbetter",
+            "weight": 100,
+            "rshares": 1386143851,
+            "percent": 50,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:39"
+        },
+        {
+            "voter": "abrockman",
+            "weight": 3364,
+            "rshares": "25990138553",
+            "percent": 740,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:57"
+        },
+        {
+            "voter": "fanso",
+            "weight": 184,
+            "rshares": 1690869437,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:44:24"
+        },
+        {
+            "voter": "mariuszkarowski",
+            "weight": 1958,
+            "rshares": "9490921309",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "cryptoknight27",
+            "weight": 0,
+            "rshares": 0,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:24"
+        },
+        {
+            "voter": "khayziljoy",
+            "weight": 36,
+            "rshares": 328099193,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:24"
+        },
+        {
+            "voter": "therising",
+            "weight": 525375,
+            "rshares": "4572534037214",
+            "percent": 2000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:12"
+        },
+        {
+            "voter": "sustainablelivin",
+            "weight": 434,
+            "rshares": 1884916238,
+            "percent": 1500,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "fishdd",
+            "weight": 73,
+            "rshares": 1016835900,
+            "percent": 2539,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "angelinafx",
+            "weight": 215,
+            "rshares": 1495102746,
+            "percent": 450,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:42"
+        },
+        {
+            "voter": "garrettwallace",
+            "weight": 187,
+            "rshares": 1364213436,
+            "percent": 1800,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:09"
+        },
+        {
+            "voter": "payroll",
+            "weight": 131849,
+            "rshares": "1322630134664",
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:34:03"
+        },
+        {
+            "voter": "jaydih",
+            "weight": 17729,
+            "rshares": "237182261539",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "andrewma",
+            "weight": 404,
+            "rshares": "5072261104",
+            "percent": 2000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:12"
+        },
+        {
+            "voter": "promobot",
+            "weight": 3925,
+            "rshares": "50685032038",
+            "percent": 2500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "kimseun",
+            "weight": 2490,
+            "rshares": "33085194255",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "mynotsofitlife",
+            "weight": 123,
+            "rshares": 934822639,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "steem.services",
+            "weight": 243008,
+            "rshares": "1469939706873",
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "crypto.piotr",
+            "weight": 6740,
+            "rshares": "42950224307",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:12"
+        },
+        {
+            "voter": "pladozero",
+            "weight": 1341,
+            "rshares": "19918079628",
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:23:21"
+        },
+        {
+            "voter": "nateaguila",
+            "weight": 12128,
+            "rshares": "76867946449",
+            "percent": 800,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:12"
+        },
+        {
+            "voter": "hmayak",
+            "weight": 1709,
+            "rshares": "23695953384",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:27"
+        },
+        {
+            "voter": "sergino",
+            "weight": 1683,
+            "rshares": "11217434769",
+            "percent": 3500,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:42"
+        },
+        {
+            "voter": "archisteem",
+            "weight": 491,
+            "rshares": "4695272128",
+            "percent": 750,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:21"
+        },
+        {
+            "voter": "cn-malaysia",
+            "weight": 270,
+            "rshares": 2800485417,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:33"
+        },
+        {
+            "voter": "merlion",
+            "weight": 10,
+            "rshares": 145249243,
+            "percent": 50,
+            "reputation": 0,
+            "time": "2020-05-14T03:20:45"
+        },
+        {
+            "voter": "digital.mine",
+            "weight": 1836,
+            "rshares": "27865520882",
+            "percent": 100,
+            "reputation": 0,
+            "time": "2020-05-14T03:32:42"
+        },
+        {
+            "voter": "kahvesizlik",
+            "weight": 192,
+            "rshares": 1186377248,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:21"
+        },
+        {
+            "voter": "moneybaby",
+            "weight": 60,
+            "rshares": 846048497,
+            "percent": 250,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:33"
+        },
+        {
+            "voter": "kanadaramagi123",
+            "weight": 1689,
+            "rshares": "22485465179",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "suonghuynh",
+            "weight": 10485,
+            "rshares": "73529133876",
+            "percent": 450,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:42"
+        },
+        {
+            "voter": "abcallen",
+            "weight": 1227,
+            "rshares": "17031942847",
+            "percent": 8000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "loveecho",
+            "weight": 3213,
+            "rshares": "41627410764",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "bambugrove",
+            "weight": 27,
+            "rshares": 545334997,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:14:33"
+        },
+        {
+            "voter": "money-way",
+            "weight": 28,
+            "rshares": 580680092,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:14:33"
+        },
+        {
+            "voter": "angelslake",
+            "weight": 635,
+            "rshares": "8533753465",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "yestermorrow",
+            "weight": 596,
+            "rshares": "8858780521",
+            "percent": 3100,
+            "reputation": 0,
+            "time": "2020-05-14T03:28:21"
+        },
+        {
+            "voter": "dalz",
+            "weight": 957,
+            "rshares": "7638276629",
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:51"
+        },
+        {
+            "voter": "smartvote",
+            "weight": 27738,
+            "rshares": "189072386889",
+            "percent": 450,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:42"
+        },
+        {
+            "voter": "alijewel",
+            "weight": 62,
+            "rshares": 568579240,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:15"
+        },
+        {
+            "voter": "blues-wclouds",
+            "weight": 52,
+            "rshares": 1752009336,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:14:21"
+        },
+        {
+            "voter": "dlike",
+            "weight": 11680,
+            "rshares": "75562997659",
+            "percent": 280,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "triptolemus",
+            "weight": 1805,
+            "rshares": "14732349949",
+            "percent": 1480,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "voxmortis",
+            "weight": 5493,
+            "rshares": "52861948800",
+            "percent": 2000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:24"
+        },
+        {
+            "voter": "wordit",
+            "weight": 614,
+            "rshares": "8265609640",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "munhenhos",
+            "weight": 242,
+            "rshares": 1935344360,
+            "percent": 2000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:51"
+        },
+        {
+            "voter": "sj-jeong",
+            "weight": 20291,
+            "rshares": "266184627564",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "wondumyungga",
+            "weight": 1411,
+            "rshares": "18304063047",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "bobby.madagascar",
+            "weight": 1605,
+            "rshares": "10424121604",
+            "percent": 740,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "aicurator",
+            "weight": 262,
+            "rshares": 1156329609,
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:27"
+        },
+        {
+            "voter": "aquawink",
+            "weight": 1645,
+            "rshares": "21358924196",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "lkvictor2005",
+            "weight": 2363,
+            "rshares": "21557969918",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:24"
+        },
+        {
+            "voter": "jamzmie",
+            "weight": 96,
+            "rshares": 927812377,
+            "percent": 1500,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:24"
+        },
+        {
+            "voter": "sasaadrian",
+            "weight": 3511,
+            "rshares": "32140469029",
+            "percent": 2000,
+            "reputation": 0,
+            "time": "2020-05-14T03:48:21"
+        },
+        {
+            "voter": "reverseacid",
+            "weight": 52,
+            "rshares": 772911315,
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:27:21"
+        },
+        {
+            "voter": "pollygonewild",
+            "weight": 0,
+            "rshares": 0,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:39"
+        },
+        {
+            "voter": "ringit",
+            "weight": 1086,
+            "rshares": "14072704210",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "new-steemit",
+            "weight": 627,
+            "rshares": "5695873588",
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:34:12"
+        },
+        {
+            "voter": "coreabeforekorea",
+            "weight": 13141,
+            "rshares": "173935367581",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "talkative-bk",
+            "weight": 17090,
+            "rshares": "213334531284",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:12"
+        },
+        {
+            "voter": "starrouge",
+            "weight": 69,
+            "rshares": 1048492524,
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:33:21"
+        },
+        {
+            "voter": "freepress",
+            "weight": 5085,
+            "rshares": "39085867294",
+            "percent": 2500,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:51"
+        },
+        {
+            "voter": "zerofive",
+            "weight": 56,
+            "rshares": 826217444,
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:23:21"
+        },
+        {
+            "voter": "primeradue",
+            "weight": 538,
+            "rshares": "5192010829",
+            "percent": 1480,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:18"
+        },
+        {
+            "voter": "delabo",
+            "weight": 18866,
+            "rshares": "83253716222",
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "steemegg",
+            "weight": 79,
+            "rshares": 763473562,
+            "percent": 250,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:21"
+        },
+        {
+            "voter": "cnstm",
+            "weight": 131394,
+            "rshares": "977760614197",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:12"
+        },
+        {
+            "voter": "arhitekto",
+            "weight": 62,
+            "rshares": 495636541,
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:42"
+        },
+        {
+            "voter": "permaculturedude",
+            "weight": 358,
+            "rshares": 2921230284,
+            "percent": 740,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "likuang007",
+            "weight": 4132,
+            "rshares": "39674343456",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:24"
+        },
+        {
+            "voter": "ctime",
+            "weight": 81963,
+            "rshares": "593320498295",
+            "percent": 800,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:48"
+        },
+        {
+            "voter": "lianjingmedia",
+            "weight": 105,
+            "rshares": 1004005509,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:24"
+        },
+        {
+            "voter": "bobdavids",
+            "weight": 0,
+            "rshares": 0,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:51"
+        },
+        {
+            "voter": "a-secondchance",
+            "weight": 129,
+            "rshares": 1238265549,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:21"
+        },
+        {
+            "voter": "chocolatelover",
+            "weight": 269,
+            "rshares": 3997662554,
+            "percent": 4000,
+            "reputation": 0,
+            "time": "2020-05-14T03:22:12"
+        },
+        {
+            "voter": "instagram-models",
+            "weight": 3016,
+            "rshares": "23234600897",
+            "percent": 400,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:51"
+        },
+        {
+            "voter": "mia-cc",
+            "weight": 363,
+            "rshares": "5495145610",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:32:30"
+        },
+        {
+            "voter": "cecilian",
+            "weight": 610,
+            "rshares": "9258508432",
+            "percent": 9956,
+            "reputation": 0,
+            "time": "2020-05-14T03:32:30"
+        },
+        {
+            "voter": "hungrybear",
+            "weight": 8,
+            "rshares": 115149568,
+            "percent": 50,
+            "reputation": 0,
+            "time": "2020-05-14T03:20:45"
+        },
+        {
+            "voter": "fintian",
+            "weight": 55,
+            "rshares": 535809177,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:21"
+        },
+        {
+            "voter": "electrodo",
+            "weight": 5385,
+            "rshares": "74962500734",
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:33"
+        },
+        {
+            "voter": "smileyboy",
+            "weight": 9212,
+            "rshares": "44197781980",
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "hungryharish",
+            "weight": 254,
+            "rshares": "5096573944",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:14:33"
+        },
+        {
+            "voter": "elektroyazilim",
+            "weight": 102,
+            "rshares": 627718393,
+            "percent": 6000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:21"
+        },
+        {
+            "voter": "kryptogames",
+            "weight": 11095,
+            "rshares": "105603741174",
+            "percent": 2000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:24"
+        },
+        {
+            "voter": "lovelemon",
+            "weight": 6337,
+            "rshares": "60680867419",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:24"
+        },
+        {
+            "voter": "theinspiration",
+            "weight": 38,
+            "rshares": 550036013,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:23:42"
+        },
+        {
+            "voter": "epic4chris",
+            "weight": 38,
+            "rshares": 553592953,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:22:42"
+        },
+        {
+            "voter": "bergelmirsenpai",
+            "weight": 176,
+            "rshares": 2602145808,
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:26:33"
+        },
+        {
+            "voter": "rj-photo",
+            "weight": 137,
+            "rshares": 1421353644,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:36"
+        },
+        {
+            "voter": "blockchainpeople",
+            "weight": 1,
+            "rshares": 17381447,
+            "percent": 300,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:18"
+        },
+        {
+            "voter": "whatdidshewear",
+            "weight": 2349,
+            "rshares": "32497044845",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "sjgod4018",
+            "weight": 7910,
+            "rshares": "102982904346",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "mustard-seed",
+            "weight": 1311,
+            "rshares": "16039640851",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:57"
+        },
+        {
+            "voter": "morwen",
+            "weight": 2957,
+            "rshares": "18282083049",
+            "percent": 1100,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:24"
+        },
+        {
+            "voter": "likwid",
+            "weight": 427579,
+            "rshares": "4699596463499",
+            "percent": 2500,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:57"
+        },
+        {
+            "voter": "kpopprincess",
+            "weight": 17,
+            "rshares": 171969440,
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:18"
+        },
+        {
+            "voter": "map10k",
+            "weight": 3072,
+            "rshares": "14646597702",
+            "percent": 1400,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:33"
+        },
+        {
+            "voter": "moonhodler",
+            "weight": 268,
+            "rshares": 1961336253,
+            "percent": 2000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:09"
+        },
+        {
+            "voter": "soloduet",
+            "weight": 17,
+            "rshares": 167502640,
+            "percent": 5000,
+            "reputation": 0,
+            "time": "2020-05-14T03:18:18"
+        },
+        {
+            "voter": "steem.leo",
+            "weight": 10842,
+            "rshares": "70588191432",
+            "percent": 1465,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "leo.voter",
+            "weight": 16121,
+            "rshares": "104259413416",
+            "percent": 1480,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:06"
+        },
+        {
+            "voter": "hyborian-strain",
+            "weight": 132,
+            "rshares": 1965101272,
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:28:33"
+        },
+        {
+            "voter": "perrymine",
+            "weight": 71,
+            "rshares": 928073657,
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "freddio.sport",
+            "weight": 132,
+            "rshares": 1075829477,
+            "percent": 1500,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "asteroids",
+            "weight": 129,
+            "rshares": 979869909,
+            "percent": 1480,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "mapxv",
+            "weight": 2364,
+            "rshares": "16868880860",
+            "percent": 1400,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:42"
+        },
+        {
+            "voter": "botante",
+            "weight": 11275,
+            "rshares": "70937358789",
+            "percent": 3000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:36"
+        },
+        {
+            "voter": "wenjiewu",
+            "weight": 10,
+            "rshares": 98613800,
+            "percent": 2500,
+            "reputation": 0,
+            "time": "2020-05-14T03:37:12"
+        },
+        {
+            "voter": "leo.syndication",
+            "weight": 352,
+            "rshares": 2673448570,
+            "percent": 1480,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "one.life",
+            "weight": 1585,
+            "rshares": "10366822544",
+            "percent": 1477,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "maxuva",
+            "weight": 90,
+            "rshares": 636638501,
+            "percent": 1320,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:42"
+        },
+        {
+            "voter": "maxuvb",
+            "weight": 100,
+            "rshares": 675008249,
+            "percent": 1320,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:42"
+        },
+        {
+            "voter": "maxuvd",
+            "weight": 977,
+            "rshares": "6382384653",
+            "percent": 1480,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:03"
+        },
+        {
+            "voter": "maxuve",
+            "weight": 7411,
+            "rshares": "52550910469",
+            "percent": 1080,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:42"
+        },
+        {
+            "voter": "teresa.yaiyai",
+            "weight": 1372,
+            "rshares": "8142979703",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:33"
+        },
+        {
+            "voter": "viktorv",
+            "weight": 74,
+            "rshares": 576284508,
+            "percent": 5100,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:51"
+        },
+        {
+            "voter": "freedomteam2019",
+            "weight": 322,
+            "rshares": 2878482697,
+            "percent": 2500,
+            "reputation": 0,
+            "time": "2020-05-14T03:15:12"
+        },
+        {
+            "voter": "jaykayw",
+            "weight": 885,
+            "rshares": "11444063045",
+            "percent": 500,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "stevoperon",
+            "weight": 109320,
+            "rshares": "665610816961",
+            "percent": 4000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:33"
+        },
+        {
+            "voter": "sacrosanct",
+            "weight": 226,
+            "rshares": 1390343916,
+            "percent": 1406,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:21"
+        },
+        {
+            "voter": "friendlystranger",
+            "weight": 43558,
+            "rshares": "270302621928",
+            "percent": 1600,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:21"
+        },
+        {
+            "voter": "starnote",
+            "weight": 16,
+            "rshares": 217496654,
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:18"
+        },
+        {
+            "voter": "reward.tier1",
+            "weight": 63,
+            "rshares": 574707399,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:15:12"
+        },
+        {
+            "voter": "spx",
+            "weight": 8498,
+            "rshares": "105362107459",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:09"
+        },
+        {
+            "voter": "oblivioncubed",
+            "weight": 71,
+            "rshares": 547553821,
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:51"
+        },
+        {
+            "voter": "simply2koool",
+            "weight": 1783,
+            "rshares": "10599120172",
+            "percent": 2500,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:33"
+        },
+        {
+            "voter": "razer7",
+            "weight": 44605,
+            "rshares": "280948909661",
+            "percent": 2800,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:33"
+        },
+        {
+            "voter": "moochain.net",
+            "weight": 18,
+            "rshares": 219209189,
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:18"
+        },
+        {
+            "voter": "moochain.com",
+            "weight": 0,
+            "rshares": 0,
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:24"
+        },
+        {
+            "voter": "bettyliu",
+            "weight": 0,
+            "rshares": 0,
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:18"
+        },
+        {
+            "voter": "madeehaali",
+            "weight": 90,
+            "rshares": 536195211,
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:33"
+        },
+        {
+            "voter": "bcm.leo",
+            "weight": 363,
+            "rshares": 2322797380,
+            "percent": 740,
+            "reputation": 0,
+            "time": "2020-05-14T03:17:12"
+        },
+        {
+            "voter": "steemcityrewards",
+            "weight": 4588,
+            "rshares": "36468794629",
+            "percent": 1480,
+            "reputation": 0,
+            "time": "2020-05-14T03:16:51"
+        },
+        {
+            "voter": "lovequeen",
+            "weight": 572,
+            "rshares": "5223594446",
+            "percent": 10000,
+            "reputation": 0,
+            "time": "2020-05-14T03:36:27"
+        },
+        {
+            "voter": "dev.supporters",
+            "weight": 3806,
+            "rshares": "53131485552",
+            "percent": 1000,
+            "reputation": 0,
+            "time": "2020-05-14T03:20:06"
+        },
+        {
+            "voter": "steemzh",
+            "weight": 0,
+            "rshares": 0,
+            "percent": 8800,
+            "reputation": 0,
+            "time": "2020-05-14T03:19:27"
+        }
+    ],
+    "replies": [],
+    "author_reputation": "1080550164273720",
+    "promoted": "0.000 STEEM",
+    "body_length": 0,
+    "reblogged_by": []
+}
+
