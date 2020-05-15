@@ -183,126 +183,9 @@ def updatePostInformation(clicks,tag):
     post_info = "Post Info <br><br>Author : {} <br><br>Category : {} <br><br>Created : {} <br><br>Title : {} <br><br>Body : {}".format(dicts[0]['author'],
         dicts[0]['category'],dicts[0]['created'],dicts[0]['title'],dicts[0]['body'])
     #print(post_info)
-    # return str(dicts[0].keys())
+    #return str(dicts[0].keys())
     return post_info
     
-
-# @app.callback(
-#     Output(component_id='graphA',component_property='figure'),
-#     # Output(component_id='graphB',component_property='figure'), 
-#     # Output(component_id='graphC',component_property='figure'), 
-#     # Output(component_id='graphD',component_property='figure')] ,  
-#     [Input(component_id='button-two',component_property='n_clicks')],
-#     state=[State(component_id='option-select-two',component_property='value'),
-#     State(component_id='second-drop',component_property='value'),
-#     State(component_id='tag-two',component_property='value'),
-#     State('posts-two','value')]
-#     )
-# def updateGraphs(clicks,option,suboption,tag,post):
-
-#     print(option)
-#     print(suboption)
-
-
-#     s = Steem()
-#     print('ivide kerii')
-#     query = {
-#     "limit":post, #number of posts
-#     "tag":str(tag) #tag of posts
-#     }
-#     print("collecting posts...")
-#     posts = s.get_discussions_by_created(query)
-#     print('posts collected!')
-
-#     details = ''
-#     dicts = []
-#     print("working")
-#     for post in posts:
-#         details = s.get_content(post["author"],post["permlink"])
-#         dicts.append(details)
-#         print(details)
-#     pending = []
-#     for post in dicts:
-#         pending.append(post[suboption[0]])
-#     print(type(pending[0]))
-#     numbers = []
-#     for entry in pending:
-#         for word in entry.split():
-#             print(word)
-#             try:
-#                 numbers.append(float(word))
-#             except:
-#                 print()
-
-#     x = []
-#     for i in range(len(post)):
-#         x.append(i)
-        
-    
-#     datum = []
-#     trace = go.Scatter(x=x,y=numbers,name='Pending Payouts',line=dict(color='#f44242'))
-
-#     datum.append(trace)
-
-#     layouts = {'title':'Pending Payouts'}
-    
-#     return {
-#         "data" : datum,
-#         "layout" : layouts
-#     }  
-    # if (option=='Single Characteristic Comparison'):
-        
-
-
-    # elif(option=='Multiple Characteristic Comparison'):
-
-    #     post=1
-
-    #     s = Steem()
-    #     query = {
-    #         "limit":post, #number of posts
-    #         "tag":str(tag) #tag of posts
-    #         }
-    #     print("collecting posts...")
-    #     posts = s.get_discussions_by_created(query)
-    #     print('posts collected!')
-
-    #     details = ''
-    #     dicts = []
-    #     print("working")
-    #     for post in posts:
-    #         details = s.get_content(post["author"],post["permlink"])
-    #         dicts.append(details)
-
-    #     pending = []
-    #     for post in dicts:
-    #         pending.append(post['pending_payout_value'])
-    #     print(type(pending[0]))
-    #     numbers = []
-    #     for entry in pending:
-    #         for word in entry.split():
-    #             print(word)
-    #             try:
-    #                 numbers.append(float(word))
-    #             except:
-    #                 print()
-        
-    #     x = []
-    #     for i in range(len(post)):
-    #         x.append(i)
-        
-    #     datum = []
-    #     trace = go.Scatter(x=x,y=numbers,name='Pending Payouts',line=dict(color='#f44242'))
-
-    #     datum.append(trace)
-
-    #     layouts = {'title':'Pending Payouts'}
-        
-    #     return {
-    #         "data" : datum,
-    #         "layout" : layouts
-    #     } 
-
 
 @app.callback(
     [Output(component_id='graphA',component_property='figure'),
@@ -348,10 +231,6 @@ def updateGraphs(clicks,option,suboption,tag,post):
         
         
         for post in dicts:
-            # char1.append(post[suboption[0]])
-            # char2.append(post[suboption[1]])
-            # char3.append(post[suboption[2]])
-            # char4.append(post[suboption[3]])
             for i in range(len(suboption)):
                 list_of_characteristics[i].append(post[suboption[i]])
         #print(type(pending[0]))
@@ -377,36 +256,12 @@ def updateGraphs(clicks,option,suboption,tag,post):
                             list_of_y[i].append(float(word))
                         except:
                             print('int aano nokkuna stage ethy')
-                            # try:
-                            #     list_of_y[i].append(int(word))
-                            #     print('word as int = '+str(int(word)))
-                            # except:
-                            #     print()
-
-    
-        # pending = []
-        # for post in dicts:
-        #     pending.append(post['pending_payout_value'])
-        # print(type(pending[0]))
-        # numbers = []
-        # for entry in pending:
-        #     for word in entry.split():
-        #         print(word)
-        #         try:
-        #             numbers.append(float(word))
-        #         except:
-        #             print()
-    
-        
+                            
         x = []
         for i in range(len(posts)): 
             x.append(i)
         print(x)
         
-        # x = []
-        # for i in range(post):
-        #     print(i)
-        #     x.append(i)
         print(list_of_y[0])
         print(list_of_y[1])
         print(list_of_y[2])
@@ -465,7 +320,6 @@ def updateGraphs(clicks,option,suboption,tag,post):
 
     elif(option=='Multiple Characteristic Comparison'):
 
-        
         s = Steem()
         query = {
             "limit":post, #number of posts
