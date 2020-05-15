@@ -29,14 +29,17 @@ tab1 = dbc.Card(
         html.H1('Post Details'),
         dcc.Input(id='tag',value="",className='text-area',placeholder='Enter Tags',disabled=False),
         html.Button('Get Data',id='button',className='button-css'),
+        html.Br(),
         html.Div(
         style={'text-align':'center'},
         children=[  
-            html.Iframe(id='output-text',className='output-class'),
+            html.Iframe(id='output-text',className='output-class',style={
+                'width':'100%','height':'1000px'
+            }),
         ]
         )]
     )
-        ]),style={'background':'#f0f0f8'})
+        ]),style={'background':'#f0f0f8','height':'100%'})
 
 optionsDict = {'Single Characteristic Comparison': ['pending_payout_value', 'total_pending_payout_value', 'net_votes','total_payout_value','curator_payout_value'], 
                 'Multiple Characteristic Comparison': ['Pending Payout vs Total Payout', 'Pending Payout vs Net Votes']}
@@ -418,5 +421,5 @@ def updateGraphs(clicks,option,suboption,tag,post):
 
    
 if __name__ == "__main__":
-    app.run_server(debug=False,port='8010')
+    app.run_server(debug=False,port='8030')
 
