@@ -149,7 +149,7 @@ def option_select_tab2(val):
         return False,False
     
     elif(val=='Multiple Characteristic Comparison'):
-        return False,True
+        return False,False
     
     else:
         return True,True
@@ -465,8 +465,7 @@ def updateGraphs(clicks,option,suboption,tag,post):
 
     elif(option=='Multiple Characteristic Comparison'):
 
-        post=1
-
+        
         s = Steem()
         query = {
             "limit":post, #number of posts
@@ -507,10 +506,10 @@ def updateGraphs(clicks,option,suboption,tag,post):
 
         layouts = {'title':'Pending Payouts'}
         
-        return {
+        return [{
             "data" : datum,
             "layout" : layouts
-        } 
+        },{},{},{}] 
 
 
    
