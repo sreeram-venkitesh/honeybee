@@ -7,3 +7,4 @@ dash-core-components==1.10.0
 dash-bootstrap-components==0.10.0
 steem==1.0.1
 pick==0.6.7
+flask==1.1.2
