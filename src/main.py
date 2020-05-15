@@ -202,53 +202,179 @@ def updateGraphs(clicks,option,suboption,tag,post):
 
     print(option)
     print(suboption)
-    s = Steem()
-    query = {
+
+    if (option=='Single Characteristic Comparison'):
+        s = Steem()
+        print('ivide kerii')
+        query = {
         "limit":post, #number of posts
         "tag":str(tag) #tag of posts
         }
-    print("collecting posts...")
-    posts = s.get_discussions_by_created(query)
-    print('posts collected!')
+        print("collecting posts...")
+        posts = s.get_discussions_by_created(query)
+        print('posts collected!')
 
-    details = ''
-    dicts = []
-    print("working")
-    for post in posts:
-        details = s.get_content(post["author"],post["permlink"])
-        dicts.append(details)
+        details = ''
+        dicts = []
+        print("working")
+        for post in posts:
+            details = s.get_content(post["author"],post["permlink"])
+            dicts.append(details)
 
-    pending = []
-    for post in dicts:
-        pending.append(post['pending_payout_value'])
-    print(type(pending[0]))
-    numbers = []
-    for entry in pending:
-        for word in entry.split():
-            print(word)
-            try:
-                numbers.append(float(word))
-            except:
-                print()
+        char1 = []
+        char2 = []
+        char3 = []
+        char4 = []
+
+        #list_of_characteristics = [char1,char2,char3,char4]
+        
+        
+        # for post in dicts:
+        #     # char1.append(post[suboption[0]])
+        #     # char2.append(post[suboption[1]])
+        #     # char3.append(post[suboption[2]])
+        #     # char4.append(post[suboption[3]])
+        #     for i in range(len(suboption)):
+        #         list_of_characteristics[i].append(suboption[i])
+        # #print(type(pending[0]))
+        # y1 = []
+        # y2 = []
+        # y3 = []
+        # y4 = []
+
+        # list_of_y = [y1,y2,y3,y4]
+
+        # for i in range(len(list_of_characteristics)):
+        #     for entry in list_of_characteristics[i]:
+        #         for word in entry.split():
+        #             print(word)
+        #             try:
+        #                 list_of_y[i].append(float(word))
+        #             except:
+        #                 print()
+
+        pending = []
+        for post in dicts:
+            pending.append(post['pending_payout_value'])
+        print(type(pending[0]))
+        numbers = []
+        for entry in pending:
+            for word in entry.split():
+                print(word)
+                try:
+                    numbers.append(float(word))
+                except:
+                    print()
     
-    x = []
-    for i in range(len(post)):
-        x.append(i)
-    
-    datum = []
-    trace = go.Scatter(x=x,y=numbers,name='Pending Payouts',line=dict(color='#f44242'))
+        x = []
+        for i in range(len(post)):
+            x.append(i)
+        
+        x = []
+        for i in range(post):
+            print(i)
+            x.append(i)
+        
+        # datum1 = []
+        # trace1 = go.Scatter(x=x,y=list_of_y[0],name=suboption[0],line=dict(color='#f44242'))
+        # datum1.append(trace1)
 
-    datum.append(trace)
+        # datum2 = []
+        # trace2 = go.Scatter(x=x,y=list_of_y[1],name=suboption[1],line=dict(color='#f44242'))
+        # datum2.append(trace2)
 
-    layouts = {'title':'Pending Payouts'}
-    
-    return {
-        "data" : datum,
-        "layout" : layouts
-    } 
+        # datum3 = []
+        # trace3 = go.Scatter(x=x,y=list_of_y[2],name=suboption[2],line=dict(color='#f44242'))
+        # datum3.append(trace3)
+
+        # datum4 = []
+        # trace4 = go.Scatter(x=x,y=list_of_y[3],name=suboption[3],line=dict(color='#f44242'))
+        # datum4.append(trace4)
+
+        # layouts1 = {'title':suboption[0]}
+        # layouts2 = {'title':suboption[1]}
+        # layouts3 = {'title':suboption[2]}
+        # layouts4 = {'title':suboption[3]}
+
+        # result1 = {
+        #     "data" : datum1,
+        #     "layout" : layouts1
+        # }
+        # result2 = {
+        #     "data" : datum2,
+        #     "layout" : layouts2
+        # }
+        # result3 = {
+        #     "data" : datum3,
+        #     "layout" : layouts3
+        # }
+        # result4 = {
+        #     "data" : datum4,
+        #     "layout" : layouts4
+        # }
+
+        # finallist = []
+
+        # finallist.append(result1)
+        # finallist.append(result2)
+        # finallist.append(result3)
+        # finallist.append(result4)
+        # print(finallist)
+        # return finallist
+        return 
+
+
+    elif(option=='Multiple Characteristic Comparison'):
+
+        post=1
+
+        s = Steem()
+        query = {
+            "limit":post, #number of posts
+            "tag":str(tag) #tag of posts
+            }
+        print("collecting posts...")
+        posts = s.get_discussions_by_created(query)
+        print('posts collected!')
+
+        details = ''
+        dicts = []
+        print("working")
+        for post in posts:
+            details = s.get_content(post["author"],post["permlink"])
+            dicts.append(details)
+
+        pending = []
+        for post in dicts:
+            pending.append(post['pending_payout_value'])
+        print(type(pending[0]))
+        numbers = []
+        for entry in pending:
+            for word in entry.split():
+                print(word)
+                try:
+                    numbers.append(float(word))
+                except:
+                    print()
+        
+        x = []
+        for i in range(len(post)):
+            x.append(i)
+        
+        datum = []
+        trace = go.Scatter(x=x,y=numbers,name='Pending Payouts',line=dict(color='#f44242'))
+
+        datum.append(trace)
+
+        layouts = {'title':'Pending Payouts'}
+        
+        return {
+            "data" : datum,
+            "layout" : layouts
+        } 
 
 
    
 if __name__ == "__main__":
-    app.run_server(debug=False,port='8040')
+    app.run_server(debug=True,port='8040')
 
