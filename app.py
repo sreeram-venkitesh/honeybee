@@ -4,14 +4,19 @@ import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 import plotly.graph_objs as go
-
+import flask
+from random import randint
+import os
 import os
 from steem import Steem
 from pick import pick
 import pprint
 import json
 
-app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+
+server = flask.Flask(__name__)
+server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
+app = dash.Dash(__name__,server=server,external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 
 tab1 = dbc.Card(
