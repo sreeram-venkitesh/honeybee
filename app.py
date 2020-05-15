@@ -26,7 +26,7 @@ tab1 = dbc.Card(
         html.Div(
         style={'text-align':'center','background':'#f0f0f8'},
         children=[
-        html.H1('Post Details'),
+        html.H1('Latest Post Details'),
         dcc.Input(id='tag',value="",className='text-area',placeholder='Enter Tags',disabled=False),
         html.Button('Get Data',id='button',className='button-css'),
         html.Br(),
