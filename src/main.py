@@ -20,7 +20,7 @@ tab1 = dbc.Card(
        
         [
         html.Div(
-        style={'text-align':'center'},
+        style={'text-align':'center','background':'#f0f0f8'},
         children=[
         html.H1('Post Details'),
         dcc.Input(id='tag',value="",className='text-area',placeholder='Enter Tags',disabled=False),
@@ -32,7 +32,7 @@ tab1 = dbc.Card(
         ]
         )]
     )
-        ]))
+        ]),style={'background':'#f0f0f8'})
 
 optionsDict = {'Single Characteristic Comparison': ['pending_payout_value', 'total_pending_payout_value', 'net_votes','total_payout_value','curator_payout_value'], 
                 'Multiple Characteristic Comparison': ['Pending Payout vs Total Payout', 'Pending Payout vs Net Votes']}
@@ -44,7 +44,7 @@ tab2 = dbc.Card(
     dbc.CardBody(
         [
         html.Div(
-        style={'text-align':'center'},
+        style={'text-align':'center','background':'#f0f0f8'},
         children=[
         dcc.Dropdown(id='option-select-two',
             className='option-select',
@@ -62,8 +62,10 @@ tab2 = dbc.Card(
         dcc.Input(id='tag-two',value="",className='text-area',placeholder='Enter Tags',disabled=True),
         dcc.Input(id='posts-two',value="",className='text-area',placeholder='Enter Number of Posts',type='number',disabled=True),
         html.Button('Get Data',id='button-two',className='button-css'),
+        html.Br()
         ]
     ),
+    
     dbc.Row(
         [
             dbc.Col(dcc.Graph(
@@ -74,7 +76,8 @@ tab2 = dbc.Card(
                 style={'width':'99%','height':'500px'},
                 id='graphB'
             ))
-        ]
+        ],
+        style={'background':'#f0f0f8'}
     ),
     dbc.Row(
         [
@@ -90,7 +93,8 @@ tab2 = dbc.Card(
     )],
     style={'height':'1000px'}
 
-    )
+    ),style={'background':'#f0f0f8'}
+    
 )
 
 
@@ -110,13 +114,36 @@ def update_date_dropdown(name):
 
 app.title = 'honeybee'
 app.layout = html.Div(
-     children=[
-    dbc.Row([dbc.Col(dbc.Jumbotron(
+    children=[
+    
+    dbc.Row([
+        dbc.Col(dbc.Jumbotron(
         children=[
-            html.H1('honeybee',style={'text-align':'left','margin-left':'50px'}),
-            html.H2('The Hive Data Collector',style={'text-align':'left','margin-left':'50px'}),
+
+            html.H1('honeybee',style={'text-align':'left','margin-left':'50px','color':'#212529','font-weight':'bold'}),
+            html.Hr(),
+            html.H2('The Hive Data Collector',style={'text-align':'left','margin-left':'50px','color':'#212529'}),
         ],
-    ))]),
+        style={'background':'#E31337','padding-right':'0px'},
+        fluid=True
+        ),
+        style={'padding-right':'0px'}),
+        dbc.Col(
+            dbc.Jumbotron(
+        children=[
+
+            
+            html.H1(html.A('GitHub',href='https://github.com/fillerink/honeybee'),style={'text-align':'right','padding-right':'30px'}),
+            html.Hr(),
+            html.H2("STEEMGeek Hackathon",style={'text-align':'right','padding-right':'30px'})
+        ],
+        style={'background':'#E31337'},
+        fluid=True
+        ),style={'margin-left':'0px','padding-left':'0px'}
+        )
+    
+    ],style={'margin-bottom':'0px'}),
+
     dbc.Row([dbc.Col(dbc.Tabs(
         [
             dbc.Tab(tab1, label="Get Post Details"),
@@ -124,19 +151,11 @@ app.layout = html.Div(
             dbc.Tab(
                 "This tab's content is never seen", label="Blockchain Info", disabled=True
             ),
-        ],
-    ),)]),
-    html.Br(),
-    dbc.Row([dbc.Col(dbc.Jumbotron(
-        children=[
-            html.H3('Made with <3 by fillerInk ',style={'text-align':'left','margin-left':'50px'}),
-            html.H4('The Hive Data Collector',style={'text-align':'left','margin-left':'50px'}),
-        ],
-        fluid=True,
-        # style={'margin-bottom':'-20px','margin-top':'100px'}
-        #className='fixed-bottom'
-    ))]),
-     ],
+        ],style={'background':'#e7e7f1'}
+    ),style={'background':'#e7e7f1'})],style={'background':'#e7e7f1'}),
+    
+
+    ],style={'background':'#e7e7f1'}
 )
 
 @app.callback(
@@ -204,6 +223,8 @@ def updateGraphs(clicks,option,suboption,tag,post):
     print(option)
     print(suboption)
 
+    
+
     if (option=='Single Characteristic Comparison'):
         s = Steem()
         print('ivide kerii')
@@ -239,6 +260,18 @@ def updateGraphs(clicks,option,suboption,tag,post):
         y3 = []
         y4 = []
 
+        if len(suboption) == 1:
+            suboption.append("empty")
+            suboption.append("empty")
+            suboption.append("empty")
+        elif len(suboption) == 2:
+            suboption.append("empty")
+            suboption.append("empty")
+        elif len(suboption) == 3:
+            suboption.append("empty")
+
+        print(suboption)
+
         list_of_y = [y1,y2,y3,y4]
 
         print('list of characteristics ' +str(list_of_characteristics))
@@ -267,6 +300,19 @@ def updateGraphs(clicks,option,suboption,tag,post):
         print(list_of_y[2])
         print(list_of_y[3])
         
+        print('first stage printed, going to second')
+        for i in range (0,4):
+            if (len(list_of_y[i]) == 0):
+                list_of_y[i] = [0,0,0,0] 
+        
+        
+        print('nammade initialisation complete')
+        print(list_of_y[0])
+        print(list_of_y[1])
+        print(list_of_y[2])
+        print(list_of_y[3])
+
+ 
         datum1 = []
         trace1 = go.Scatter(x=x,y=list_of_y[0],name=suboption[0],line=dict(color='#f44242'))
         datum1.append(trace1)
@@ -368,5 +414,5 @@ def updateGraphs(clicks,option,suboption,tag,post):
 
    
 if __name__ == "__main__":
-    app.run_server(debug=True,port='8050')
+    app.run_server(debug=False,port='8010')
 
