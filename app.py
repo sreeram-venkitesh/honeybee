@@ -206,8 +206,8 @@ def updatePostInformation(clicks,tag):
         
     print(type(details))
     # # return 'You have clicked {} times. Input tags are {}, number of posts are {}'.format(clicks,tag,post)
-    post_info = "Post Info <br><br>Author : {} <br><br>Category : {} <br><br>Created : {} <br><br>Title : {} <br><br>Body : {}".format(dicts[0]['author'],
-        dicts[0]['category'],dicts[0]['created'],dicts[0]['title'],dicts[0]['body'])
+    post_info = "Post Info <br><br>Author : {} <br><br>Category : {} <br><br>Created : {} <br><br>Title : {} <br><br> Total Votes : {} <br><br>Pending Payout Value : {} <br><br>Total Pending Payout Value : {} <br><br>Body : {} ".format(dicts[0]['author'],
+        dicts[0]['category'],dicts[0]['created'],dicts[0]['title'],dicts[0]['net_votes'],dicts[0]['pending_payout_value'],dicts[0]['total_pending_payout_value'],dicts[0]['body'])
     #print(post_info)
     #return str(dicts[0].keys())
     return post_info
