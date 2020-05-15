@@ -1,12 +1,4 @@
-gunicorn>=20.0.4
-plotly>=4.7.1
-dash==1.12.0
-dash-renderer==1.4.1
-dash-html-components==1.0.3
-dash-core-components==1.10.0
-dash-bootstrap-components==0.10.0
-steem==1.0.1
-pick==0.6.7appdirs==1.4.4
+appdirs==1.4.4
 Brotli==1.0.7
 certifi==2019.11.28
 Click==7.0
@@ -17,6 +9,7 @@ dash-html-components==1.0.3
 dash-renderer==1.4.1
 dash-table==4.7.0
 ecdsa==0.15
+fastapi==0.49.0
 Flask==1.1.2
 Flask-Compress==1.5.0
 funcy==1.14
