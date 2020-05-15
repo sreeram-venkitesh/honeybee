@@ -142,7 +142,7 @@ app.layout = html.Div(
             
             html.H1(html.A('GitHub',href='https://github.com/fillerink/honeybee'),style={'text-align':'right','padding-right':'30px'}),
             html.Hr(),
-            html.H2("STEEMGeek Hackathon",style={'text-align':'right','padding-right':'30px'})
+            html.H2("STEMGeek Hackathon",style={'text-align':'right','padding-right':'30px'})
         ],
         style={'background':'#E31337'},
         fluid=True
