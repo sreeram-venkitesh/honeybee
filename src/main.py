@@ -186,51 +186,6 @@ def updatePostInformation(clicks,tag):
     # return str(dicts[0].keys())
     return post_info
     
-    # elif(option=='analytics'):
-    #     s = Steem()
-    #     query = {
-    #         "limit":post, #number of posts
-    #         "tag":str(tag) #tag of posts
-    #         }
-    #     print("collecting posts...")
-    #     posts = s.get_discussions_by_created(query)
-    #     print('posts collected!')
-
-    #     details = ''
-    #     dicts = []
-    #     print("working")
-    #     for post in posts:
-    #         details = s.get_content(post["author"],post["permlink"])
-    #         dicts.append(details)
-
-    #     pending = []
-    #     for post in dicts:
-    #         pending.append(post['pending_payout_value'])
-    #     print(type(pending[0]))
-    #     numbers = []
-    #     for entry in pending:
-    #         for word in entry.split():
-    #             print(word)
-    #             try:
-    #                 numbers.append(float(word))
-    #             except:
-    #                 print()
-        
-    #     x = []
-    #     for i in range(len(post)):
-    #         x.append(i)
-        
-    #     datum = []
-    #     trace = go.Scatter(x=x,y=numbers,name='Pending Payouts',line=dict(color='#f44242'))
-
-    #     datum.append(trace)
-
-    #     layouts = {'title':'Pending Payouts'}
-        
-    #     return ["",{
-    #         "data" : datum,
-    #         "layout" : layouts
-    #     } ]
 
 @app.callback(
     [Output(component_id='graphA',component_property='figure'),
@@ -292,67 +247,8 @@ def updateGraphs(clicks,option,suboption,tag,post):
         "layout" : layouts
     } 
 
-# @app.callback(
-#     Output(component_id='graphA',component_property='figure'),
-#     [Input(component_id='button',component_property='n_clicks')],
-#     state=[ State(component_id='option-select',component_property='value'),
-#             State(component_id='tag',component_property='value'),
-#             State(component_id='posts',component_property='value')
-#           ]
-# )
-# def analyticsFunction(clicks,option,tag,post):
-#     if (option=='analytics'):
-#         s = Steem()
-#         query = {
-#             "limit":post, #number of posts
-#             "tag":str(tag) #tag of posts
-#             }
-#         print("collecting posts...")
-#         posts = s.get_discussions_by_created(query)
-#         print('posts collected!')
 
-#         details = ''
-#         dicts = []
-#         print("working")
-#         for post in posts:
-#             details = s.get_content(post["author"],post["permlink"])
-#             dicts.append(details)
-
-#         pending = []
-#         for post in dicts:
-#             pending.append(post['pending_payout_value'])
-#         print(type(pending[0]))
-#         numbers = []
-#         for entry in pending:
-#             for word in entry.split():
-#                 print(word)
-#                 try:
-#                     numbers.append(float(word))
-#                 except:
-#                     print()
-        
-#         x = []
-#         for i in range(len(post)):
-#             x.append(i)
-        
-#         datum = []
-#         trace = go.Scatter(x=x,y=numbers,name='Pending Payouts',line=dict(color='#f44242'))
-
-#         datum.append(trace)
-
-#         # layouts = {'title':'Pending Payouts'}
-        
-#         return {
-#             "data" : datum
-#             # "layout" : layouts
-#         } 
-    
-#     else:
-#         return
-
-        
-
-
+   
 if __name__ == "__main__":
     app.run_server(debug=False,port='8040')
 
