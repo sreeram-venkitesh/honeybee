@@ -126,13 +126,14 @@ app.layout = html.Div(
             ),
         ],
     ),)]),
+    html.Br(),
     dbc.Row([dbc.Col(dbc.Jumbotron(
         children=[
             html.H3('Made with <3 by fillerInk ',style={'text-align':'left','margin-left':'50px'}),
             html.H4('The Hive Data Collector',style={'text-align':'left','margin-left':'50px'}),
         ],
         fluid=True,
-        style={'margin-bottom':'-15px','margin-top':'85px'}
+        # style={'margin-bottom':'-20px','margin-top':'100px'}
         #className='fixed-bottom'
     ))]),
      ],
@@ -158,7 +159,7 @@ def option_select_tab2(val):
     [Input(component_id='button',component_property='n_clicks')],
     state=[State(component_id='tag',component_property='value')]
     )
-def update(clicks,tag):
+def updatePostInformation(clicks,tag):
     post=1
 
     s = Steem()
@@ -231,86 +232,65 @@ def update(clicks,tag):
     #         "layout" : layouts
     #     } ]
 
-# @app.callback(
-#     [Output(component_id='output',component_property='srcDoc'),
-#      Output(component_id='graphA',component_property='figure')],    
-#     [Input(component_id='button-two',component_property='n_clicks')],
-#     state=[State(component_id='option-select-two',component_property='value'),State(component_id='tag-two',component_property='value'),State(component_id='posts-two',component_property='value')]
-#     )
-# def update2(clicks,option,tag,post):
+@app.callback(
+    [Output(component_id='graphA',component_property='figure'),
+    Output(component_id='graphB',component_property='figure'), 
+    Output(component_id='graphC',component_property='figure'), 
+    Output(component_id='graphD',component_property='figure')] ,  
+    [Input(component_id='button-two',component_property='n_clicks')],
+    state=[State(component_id='option-select-two',component_property='value'),
+    State(component_id='second-drop',component_property='value'),
+    State(component_id='tag-two',component_property='value'),
+    State('posts-two','value')]
+    )
+def updateGraphs(clicks,option,suboption,tag,post):
 
-#     if(option=='latest'):
-#         post=1
+    print(option)
+    print(suboption)
+    s = Steem()
+    query = {
+        "limit":post, #number of posts
+        "tag":str(tag) #tag of posts
+        }
+    print("collecting posts...")
+    posts = s.get_discussions_by_created(query)
+    print('posts collected!')
 
-#         s = Steem()
-#         query = {
-#             "limit":post, #number of posts
-#             "tag":str(tag) #tag of posts
-#             }
-#         print("collecting posts...")
-#         posts = s.get_discussions_by_created(query)
-#         print('posts collected!')
+    details = ''
+    dicts = []
+    print("working")
+    for post in posts:
+        details = s.get_content(post["author"],post["permlink"])
+        dicts.append(details)
 
-#         details = ''
-#         dicts = []
-#         print("working")
-#         for post in posts:
-#             details = s.get_content(post["author"],post["permlink"])
-#             dicts.append(details)
-            
-#         print(type(details))
-#         # # return 'You have clicked {} times. Input tags are {}, number of posts are {}'.format(clicks,tag,post)
-#         post_info = "Post Info <br><br>Author : {} <br><br>Category : {} <br><br>Created : {} <br><br>Title : {} <br><br>Body : {}".format(dicts[0]['author'],
-#          dicts[0]['category'],dicts[0]['created'],dicts[0]['title'],dicts[0]['body'])
-#         #print(post_info)
-#         # return str(dicts[0].keys())
-#         return [post_info,{}] 
+    pending = []
+    for post in dicts:
+        pending.append(post['pending_payout_value'])
+    print(type(pending[0]))
+    numbers = []
+    for entry in pending:
+        for word in entry.split():
+            print(word)
+            try:
+                numbers.append(float(word))
+            except:
+                print()
     
-#     elif(option=='analytics'):
-#         s = Steem()
-#         query = {
-#             "limit":post, #number of posts
-#             "tag":str(tag) #tag of posts
-#             }
-#         print("collecting posts...")
-#         posts = s.get_discussions_by_created(query)
-#         print('posts collected!')
+    x = []
+    for i in range(len(post)):
+        x.append(i)
+    
+    datum = []
+    trace = go.Scatter(x=x,y=numbers,name='Pending Payouts',line=dict(color='#f44242'))
 
-#         details = ''
-#         dicts = []
-#         print("working")
-#         for post in posts:
-#             details = s.get_content(post["author"],post["permlink"])
-#             dicts.append(details)
+    datum.append(trace)
 
-#         pending = []
-#         for post in dicts:
-#             pending.append(post['pending_payout_value'])
-#         print(type(pending[0]))
-#         numbers = []
-#         for entry in pending:
-#             for word in entry.split():
-#                 print(word)
-#                 try:
-#                     numbers.append(float(word))
-#                 except:
-#                     print()
-        
-#         x = []
-#         for i in range(len(post)):
-#             x.append(i)
-        
-#         datum = []
-#         trace = go.Scatter(x=x,y=numbers,name='Pending Payouts',line=dict(color='#f44242'))
-
-#         datum.append(trace)
-
-#         layouts = {'title':'Pending Payouts'}
-        
-#         return ["",{
-#             "data" : datum,
-#             "layout" : layouts
-#         } ]
+    layouts = {'title':'Pending Payouts'}
+    
+    return {
+        "data" : datum,
+        "layout" : layouts
+    } 
 
 # @app.callback(
 #     Output(component_id='graphA',component_property='figure'),
@@ -374,5 +354,5 @@ def update(clicks,tag):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True,port='8040')
+    app.run_server(debug=False,port='8040')
 
