@@ -21,7 +21,6 @@ app = dash.Dash(__name__,server=server,external_stylesheets=[dbc.themes.BOOTSTRA
 
 tab1 = dbc.Card(
     dbc.CardBody(
-       
         [
         html.Div(
         style={'text-align':'center','background':'#f0f0f8'},
@@ -67,7 +66,8 @@ tab2 = dbc.Card(
         ),
         html.Br(),
         dcc.Input(id='tag-two',value="",className='text-area',placeholder='Enter Tags',disabled=True),
-        dcc.Input(id='posts-two',value="",className='text-area',placeholder='Enter Number of Posts',type='number',disabled=True),
+        dcc.Input(id='posts-two',value="",className='text-area',placeholder='Enter Number of Posts',
+                    type='number',disabled=True),
         html.Button('Get Data',id='button-two',className='button-css'),
         html.Br()
         ]
@@ -127,7 +127,8 @@ app.layout = html.Div(
         dbc.Col(dbc.Jumbotron(
         children=[
 
-            html.H1('honeybee',style={'text-align':'left','margin-left':'50px','color':'#212529','font-weight':'bold'}),
+            html.H1('honeybee',style={'text-align':'left','margin-left':'50px','color':'#212529',
+                    'font-weight':'bold'}),
             html.Hr(),
             html.H2('The Hive Data Collector',style={'text-align':'left','margin-left':'50px','color':'#212529'}),
         ],
@@ -140,7 +141,8 @@ app.layout = html.Div(
         children=[
 
             
-            html.H1(html.A('GitHub',href='https://github.com/fillerink/honeybee'),style={'text-align':'right','padding-right':'30px'}),
+            html.H1(html.A('GitHub',href='https://github.com/fillerink/honeybee'),style={'text-align':'right',
+                            'padding-right':'30px'}),
             html.Hr(),
             html.H2("STEMGeek Hackathon",style={'text-align':'right','padding-right':'30px'})
         ],
@@ -226,11 +228,6 @@ def updatePostInformation(clicks,tag):
     State('posts-two','value')]
     )
 def updateGraphs(clicks,option,suboption,tag,post):
-
-    print(option)
-    print(suboption)
-
-    
 
     if (option=='Single Characteristic Comparison'):
         s = Steem()
