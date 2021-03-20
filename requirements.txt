@@ -18,7 +18,7 @@ gunicorn==20.0.4
 h11==0.9.0
 httptools==0.1.1
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==2.11.3
 langdetect==1.0.8
 MarkupSafe==1.1.1
 pick==0.6.7
