@@ -9,7 +9,7 @@ dash-html-components==1.0.3
 dash-renderer==1.4.1
 dash-table==4.7.0
 ecdsa==0.15
-fastapi==0.49.0
+fastapi==0.65.2
 Flask==1.1.2
 Flask-Compress==1.5.0
 funcy==1.14
